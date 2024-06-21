@@ -10,7 +10,7 @@ For a set of notebooks building components of the Financial Analyst Agent with e
 
 Rename the file `.env.example` to `.env` and fill in your OpenAI API key.
 
-You can optionally fill in the `GOOGLE_API_KEY` and `GOOGLE_SEARCH_ENGINE_ID` keys to allow the Agent to use Google Search. Instructions for generating those keys can be found in `/notebooks/2_google_search.ipynb`.
+You can optionally fill in the `GOOGLE_API_KEY` and `GOOGLE_SEARCH_ENGINE_ID` keys to allow the Agent to use Google Search. Instructions for generating those keys can be found in [`/notebooks/2_google_search.ipynb`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/notebooks/2_google_search.ipynb).
 
 To install dependencies, run the command
 ```
@@ -28,21 +28,21 @@ For this demo, the Agent will be a financial analyst for Microsoft.
 
 The Agent needs a company's documentation and historical price data to use in answering user questions.
 
-The company documentation is stored as a pdf file in the `document_data` directory and the company market data (such as stock prices) is stored in the `market_data` directory in either a csv or json. When the Agent is initialized, it will load the data from those directories. We provide Microsoft's 2022 10-K financial report in `/document_data/msft-10K-2022.pdf` and historical stock price and volume data starting from 2021 in `/market_data/MSFT.csv`. 
+The company documentation is stored as a pdf file in the [`document_data` directory](https://github.com/chain-ml/council-financial-analyst-agent/tree/main/document_data) and the company market data (such as stock prices) is stored in the [`market_data` directory](https://github.com/chain-ml/council-financial-analyst-agent/tree/main/market_data) in either a csv or json. When the Agent is initialized, it will load the data from those directories. We provide Microsoft's 2022 10-K financial report in [`/document_data/msft-10K-2022.pdf`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/document_data/msft-10K-2022.pdf) and historical stock price and volume data starting from 2021 in [`/market_data/MSFT.csv`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/market_data/MSFT.csv). 
 
-We also set the `COMPANY_NAME` and `COMPANY_TICKER` variables to *Microsoft* and *MSFT* in `constants.py`.
+We also set the `COMPANY_NAME` and `COMPANY_TICKER` variables to *Microsoft* and *MSFT* in [`constants.py`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/constants.py).
 
-For document retrieval, the Agent extracts the text from the pdf, builds a vector index and persists it in the `storage` directory. Upon initialization, the Agent checks the `storage` directory if the vector index can be loaded from disk instead.
+For document retrieval, the Agent extracts the text from the pdf, builds a vector index and persists it in the [`storage` directory](https://github.com/chain-ml/council-financial-analyst-agent/tree/main/storage). Upon initialization, the Agent checks the `storage` directory if the vector index can be loaded from disk instead.
 
-See `constants.py` for additional configurable parameters, such as version of OpenAI LLM models.
+See [`constants.py`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/constants.py) for additional configurable parameters, such as version of OpenAI LLM models.
 
-The steps to initialize the agent and its tools are in `config.py` and `agent_config.py`.
+The steps to initialize the agent and its tools are in [`config.py`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/config.py) and [`agent_config.py`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/agent_config.py).
 
 ## Running the Agent
 
-The Agent can be run using the `/notebooks/4_financial_analyst_agent.ipynb` notebook that recreates the project's source code in a step-by-step process.
+The Agent can be run using the [`/notebooks/4_financial_analyst_agent.ipynb`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/notebooks/4_financial_analyst_agent.ipynb) notebook that recreates the project's source code in a step-by-step process.
 
-Running `example.py` showcases how to load an Agent from the script and ask it a question. 
+Running [`example.py`](https://github.com/chain-ml/council-financial-analyst-agent/blob/main/.env.example) showcases how to load an Agent from the script and ask it a question. 
 
 We can ask the Agent the following example question: 
 ```
